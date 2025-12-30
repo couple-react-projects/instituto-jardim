@@ -1,0 +1,33 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="anabiaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9D7F5F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7A6348;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="anabiaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8D4B8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#anabiaBg)"/>
+  <!-- Cabelo -->
+  <ellipse cx="100" cy="75" rx="45" ry="50" fill="#2C1810"/>
+  <ellipse cx="100" cy="80" rx="40" ry="45" fill="#2C1810"/>
+  <!-- Rosto -->
+  <ellipse cx="100" cy="90" rx="38" ry="42" fill="url(#anabiaSkin)"/>
+  <!-- Olhos -->
+  <ellipse cx="88" cy="85" rx="4" ry="6" fill="#2C1810"/>
+  <ellipse cx="112" cy="85" rx="4" ry="6" fill="#2C1810"/>
+  <ellipse cx="88" cy="84" rx="2" ry="3" fill="#FFFFFF"/>
+  <ellipse cx="112" cy="84" rx="2" ry="3" fill="#FFFFFF"/>
+  <!-- Sobrancelhas -->
+  <path d="M 80 78 Q 88 75, 95 78" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 105 78 Q 112 75, 120 78" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Nariz -->
+  <ellipse cx="100" cy="95" rx="3" ry="4" fill="#D4C4A8" opacity="0.3"/>
+  <!-- Boca -->
+  <path d="M 92 102 Q 100 106, 108 102" stroke="#8B6F47" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Corpo/Blusa -->
+  <path d="M 50 130 Q 50 110, 70 110 Q 85 110, 100 120 Q 115 110, 130 110 Q 150 110, 150 130 L 150 180 Q 150 190, 140 190 L 60 190 Q 50 190, 50 180 Z" fill="#F5E6D3"/>
+  <path d="M 70 140 Q 85 135, 100 140 Q 115 135, 130 140" stroke="#E8D4B8" stroke-width="1.5" fill="none"/>
+</svg>

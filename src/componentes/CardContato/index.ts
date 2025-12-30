@@ -1,0 +1,2 @@
+export { CardContato } from './CardContato';
+

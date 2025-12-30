@@ -1,0 +1,106 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-md);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-medio);
+  padding: var(--espacamento-md);
+  box-shadow: var(--sombra-card);
+  transition: all var(--transicao-normal);
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: var(--sombra-card-hover);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  transform: translateY(0);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--cor-texto-principal);
+  outline-offset: 2px;
+}
+
+.foto {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--raio-circular);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.conteudo {
+  flex: 1;
+  min-width: 0;
+}
+
+.nome {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-xs);
+  line-height: 1.3;
+}
+
+.especialidade {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.registro {
+  font-size: 0.85rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.4;
+}
+
+.seta {
+  color: var(--cor-texto-secundario);
+  flex-shrink: 0;
+  transition: transform var(--transicao-rapida);
+}
+
+.card:hover .seta {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--espacamento-sm);
+    gap: var(--espacamento-sm);
+  }
+
+  .foto {
+    width: 70px;
+    height: 70px;
+  }
+
+  .nome {
+    font-size: 1rem;
+  }
+
+  .especialidade {
+    font-size: 0.85rem;
+  }
+
+  .registro {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .foto {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nome {
+    font-size: 0.95rem;
+  }
+}
+

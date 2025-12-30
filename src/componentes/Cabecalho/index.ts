@@ -1,0 +1,2 @@
+export { Cabecalho } from './Cabecalho';
+

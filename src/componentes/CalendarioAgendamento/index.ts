@@ -1,0 +1,2 @@
+export { CalendarioAgendamento } from './CalendarioAgendamento';
+

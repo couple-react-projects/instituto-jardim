@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-md);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-medio);
+  padding: var(--espacamento-md);
+  box-shadow: var(--sombra-card);
+  transition: all var(--transicao-normal);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  box-shadow: var(--sombra-card-hover);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  transform: translateY(0);
+}
+
+.icone {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--raio-circular);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--cor-branco);
+}
+
+.iconeWhatsApp {
+  background-color: var(--cor-whatsapp);
+}
+
+.iconeLocalizacao {
+  background-color: var(--cor-localizacao);
+}
+
+.conteudo {
+  flex: 1;
+  min-width: 0;
+}
+
+.titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-xs);
+  line-height: 1.3;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.4;
+}
+
+.iconeLink {
+  color: var(--cor-texto-secundario);
+  flex-shrink: 0;
+  transition: transform var(--transicao-rapida);
+}
+
+.card:hover .iconeLink {
+  transform: translate(4px, -4px);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--espacamento-sm);
+    gap: var(--espacamento-sm);
+  }
+
+  .icone {
+    width: 50px;
+    height: 50px;
+  }
+
+  .titulo {
+    font-size: 1rem;
+  }
+
+  .descricao {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .icone {
+    width: 45px;
+    height: 45px;
+  }
+
+  .titulo {
+    font-size: 0.95rem;
+  }
+}
+

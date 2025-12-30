@@ -1,0 +1,196 @@
+.container {
+  width: 100%;
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-medio);
+  padding: var(--espacamento-md);
+  box-shadow: var(--sombra-card);
+}
+
+.titulo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-lg);
+  text-align: center;
+}
+
+.secao {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.secao:last-child {
+  margin-bottom: 0;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-md);
+}
+
+.calendario {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: var(--espacamento-xs);
+  margin-bottom: var(--espacamento-md);
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacamento-xs);
+  border: 2px solid var(--cor-fundo);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-branco);
+  color: var(--cor-texto-principal);
+  cursor: pointer;
+  transition: all var(--transicao-rapida);
+  min-height: 70px;
+}
+
+.dia:hover:not(:disabled) {
+  border-color: var(--cor-texto-principal);
+  background-color: var(--cor-fundo);
+}
+
+.dia:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.diaIndisponivel {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.diaSelecionada {
+  border-color: var(--cor-texto-principal);
+  background-color: var(--cor-texto-principal);
+  color: var(--cor-branco);
+}
+
+.diaNumero {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.diaSemana {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.dataSelecionadaTexto {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+  margin-top: var(--espacamento-sm);
+}
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--espacamento-sm);
+}
+
+.horario {
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border: 2px solid var(--cor-fundo);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-branco);
+  color: var(--cor-texto-principal);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transicao-rapida);
+}
+
+.horario:hover {
+  border-color: var(--cor-texto-principal);
+  background-color: var(--cor-fundo);
+}
+
+.horarioSelecionado {
+  border-color: var(--cor-texto-principal);
+  background-color: var(--cor-texto-principal);
+  color: var(--cor-branco);
+}
+
+.input {
+  width: 100%;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border: 2px solid var(--cor-fundo);
+  border-radius: var(--raio-pequeno);
+  font-size: 1rem;
+  color: var(--cor-texto-principal);
+  background-color: var(--cor-branco);
+  transition: border-color var(--transicao-rapida);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--cor-texto-principal);
+}
+
+.input::placeholder {
+  color: var(--cor-texto-secundario);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--espacamento-sm);
+  }
+
+  .calendario {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .dia {
+    min-height: 60px;
+    padding: 0.5rem;
+  }
+
+  .diaNumero {
+    font-size: 1rem;
+  }
+
+  .diaSemana {
+    font-size: 0.7rem;
+  }
+
+  .horarios {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: var(--espacamento-xs);
+  }
+
+  .horario {
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .calendario {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .dia {
+    min-height: 50px;
+    padding: 0.4rem;
+  }
+
+  .diaNumero {
+    font-size: 0.9rem;
+  }
+
+  .diaSemana {
+    font-size: 0.65rem;
+  }
+}
+

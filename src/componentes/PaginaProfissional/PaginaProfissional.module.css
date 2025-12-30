@@ -1,0 +1,213 @@
+.pagina {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  animation: fadeIn var(--transicao-normal);
+}
+
+.botaoVoltar {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-xs);
+  color: var(--cor-texto-principal);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: var(--espacamento-lg);
+  padding: var(--espacamento-xs) 0;
+  transition: color var(--transicao-rapida);
+}
+
+.botaoVoltar:hover {
+  color: var(--cor-texto-secundario);
+}
+
+.botaoVoltar:active {
+  transform: translateX(-2px);
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.fotoContainer {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.foto {
+  width: 180px;
+  height: 180px;
+  border-radius: var(--raio-circular);
+  object-fit: cover;
+  box-shadow: var(--sombra-card);
+}
+
+.nome {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-xs);
+  line-height: 1.2;
+}
+
+.especialidade {
+  font-size: 1.1rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espacamento-xs);
+  font-weight: 500;
+}
+
+.registro {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espacamento-md);
+}
+
+.descricao {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-xl);
+  max-width: 500px;
+}
+
+.secao {
+  width: 100%;
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-medio);
+  padding: var(--espacamento-md);
+  margin-bottom: var(--espacamento-md);
+  box-shadow: var(--sombra-card);
+  text-align: left;
+}
+
+.tituloSecao {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-md);
+  text-align: center;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.icone {
+  color: var(--cor-texto-secundario);
+  flex-shrink: 0;
+}
+
+.infoTexto {
+  font-size: 1rem;
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+}
+
+.diasContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-xs);
+  margin-top: var(--espacamento-sm);
+  justify-content: center;
+}
+
+.dia {
+  display: inline-block;
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  border-radius: var(--raio-pequeno);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.botaoWhatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacamento-sm);
+  width: 100%;
+  max-width: 400px;
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  background-color: var(--cor-whatsapp);
+  color: var(--cor-branco);
+  border-radius: var(--raio-medio);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: var(--espacamento-lg);
+  transition: all var(--transicao-normal);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.botaoWhatsapp:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.botaoWhatsapp:active {
+  transform: translateY(0);
+}
+
+.botaoWhatsappDesabilitado {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.botaoWhatsappDesabilitado:hover {
+  transform: none;
+  background-color: var(--cor-whatsapp);
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .foto {
+    width: 150px;
+    height: 150px;
+  }
+
+  .nome {
+    font-size: 1.75rem;
+  }
+
+  .especialidade {
+    font-size: 1rem;
+  }
+
+  .descricao {
+    font-size: 0.95rem;
+    padding: 0 var(--espacamento-sm);
+  }
+
+  .secao {
+    padding: var(--espacamento-sm);
+  }
+
+  .tituloSecao {
+    font-size: 1.1rem;
+  }
+
+  .botaoWhatsapp {
+    font-size: 1rem;
+    padding: var(--espacamento-sm) var(--espacamento-md);
+  }
+}
+
+@media (max-width: 320px) {
+  .foto {
+    width: 120px;
+    height: 120px;
+  }
+
+  .nome {
+    font-size: 1.5rem;
+  }
+}
+

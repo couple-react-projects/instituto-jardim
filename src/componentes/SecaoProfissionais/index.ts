@@ -1,0 +1,2 @@
+export { SecaoProfissionais } from './SecaoProfissionais';
+

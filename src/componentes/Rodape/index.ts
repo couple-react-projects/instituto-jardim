@@ -1,0 +1,2 @@
+export { Rodape } from './Rodape';
+

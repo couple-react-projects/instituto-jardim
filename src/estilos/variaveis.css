@@ -1,0 +1,45 @@
+:root {
+  /* Cores */
+  --cor-fundo: #F5F5F0;
+  --cor-texto-principal: #3D2817;
+  --cor-texto-secundario: #6B6B6B;
+  --cor-branco: #FFFFFF;
+  --cor-whatsapp: #25D366;
+  --cor-localizacao: #4285F4;
+  --cor-logo-bege: #E8DCC6;
+  --cor-logo-bege-escuro: #D4C4A8;
+  --cor-marrom-claro: #8B7355;
+
+  /* Sombras */
+  --sombra-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --sombra-card-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+  /* Espaçamentos */
+  --espacamento-xs: 0.5rem;
+  --espacamento-sm: 1rem;
+  --espacamento-md: 1.5rem;
+  --espacamento-lg: 2rem;
+  --espacamento-xl: 3rem;
+  --espacamento-xxl: 4rem;
+
+  /* Tipografia */
+  --fonte-familia: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+  /* Transições */
+  --transicao-rapida: 0.2s ease;
+  --transicao-normal: 0.3s ease;
+  --transicao-lenta: 0.5s ease;
+
+  /* Larguras */
+  --largura-maxima: 600px;
+  --largura-maxima-desktop: 800px;
+
+  /* Border radius */
+  --raio-pequeno: 8px;
+  --raio-medio: 12px;
+  --raio-grande: 16px;
+  --raio-circular: 50%;
+}
+

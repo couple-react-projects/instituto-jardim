@@ -1,0 +1,2 @@
+export { PaginaProfissional } from './PaginaProfissional';
+
