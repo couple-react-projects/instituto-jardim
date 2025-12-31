@@ -12,14 +12,14 @@ export const contatos: Contato[] = [
     tipo: 'whatsapp',
     titulo: 'WhatsApp',
     descricao: 'Fale conosco agora mesmo',
-    url: 'https://wa.me/5511999999999',
+    url: 'https://wa.me/554499999999',
     icone: 'whatsapp',
   },
   {
     tipo: 'localizacao',
     titulo: 'Localização',
     descricao: 'Como chegar até nós',
-    url: 'https://maps.google.com/?q=Instituto+Jardim',
+    url: 'https://maps.app.goo.gl/3piTji8UeibTNbwU6',
     icone: 'localizacao',
   },
 ];

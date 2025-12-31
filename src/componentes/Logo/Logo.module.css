@@ -1,31 +1,24 @@
 .container {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center; /* centraliza horizontal */
+  align-items: center;     /* centraliza vertical (se tiver altura) */
+  width: 100%;
 }
 
 .logo {
   width: 120px;
   height: 120px;
   border-radius: var(--raio-circular);
-  background-color: var(--cor-logo-bege);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  position: relative;
-}
-
-.monograma {
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--cor-logo-bege-escuro);
-  letter-spacing: -2px;
+  background-image: url("imagens/logo.svg");
+  background-size: cover;
+  background-position: center;
 }
 
 .favorito {
   position: absolute;
   top: -5px;
-  right: -5px;
+  right: 175px;
   width: 32px;
   height: 32px;
   border-radius: var(--raio-circular);

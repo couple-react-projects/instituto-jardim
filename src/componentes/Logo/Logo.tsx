@@ -7,9 +7,7 @@ interface LogoProps {
 export function Logo({ mostrarFavorito = true }: LogoProps) {
   return (
     <div className={estilos.container}>
-      <div className={estilos.logo}>
-        <span className={estilos.monograma}>IJ</span>
-      </div>
+      <div className={estilos.logo}></div>
       {mostrarFavorito && (
         <button
           className={estilos.favorito}

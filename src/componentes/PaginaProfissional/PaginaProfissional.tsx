@@ -34,15 +34,15 @@ export function PaginaProfissional({ profissional, onVoltar }: PaginaProfissiona
     }
 
     const dataFormatada = formatarDataParaMensagem(dataSelecionada);
-    const mensagem = `Olá, ${profissional.nome.split(' ')[0]}! 👋
+    const mensagem = `Olá, ${profissional.nome.split(' ')}! 
 
 Gostaria de agendar uma consulta:
 
-📅 *Data:* ${dataFormatada}
-🕐 *Horário:* ${horarioSelecionado}
-👤 *Paciente:* ${nomePaciente.trim()}
+Data: ${dataFormatada}
+Horário: ${horarioSelecionado}
+Paciente: ${nomePaciente.trim()}.
 
-Aguardo confirmação. Obrigado(a)! 😊`;
+Aguardo confirmação. Obrigado(a)!`;
 
     return encodeURIComponent(mensagem);
   };
