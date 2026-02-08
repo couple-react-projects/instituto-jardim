@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center; /* centraliza horizontal */
-  align-items: center;     /* centraliza vertical (se tiver altura) */
+  align-items: center; /* centraliza vertical (se tiver altura) */
   width: 100%;
 }
 
@@ -20,4 +20,3 @@
     height: 100px;
   }
 }
-
