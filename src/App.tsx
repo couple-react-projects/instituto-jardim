@@ -26,10 +26,12 @@ function App() {
   if (profissionalSelecionado) {
     return (
       <div className={estilos.container}>
-        <PaginaProfissional
-          profissional={profissionalSelecionado}
-          onVoltar={handleVoltar}
-        />
+        <main id="conteudo-principal" tabIndex={-1}>
+          <PaginaProfissional
+            profissional={profissionalSelecionado}
+            onVoltar={handleVoltar}
+          />
+        </main>
       </div>
     );
   }
@@ -37,8 +39,10 @@ function App() {
   return (
     <div className={estilos.container}>
       <Cabecalho />
-      <SecaoProfissionais onProfissionalClick={handleProfissionalClick} />
-      <SecaoContato />
+      <main id="conteudo-principal" tabIndex={-1}>
+        <SecaoProfissionais onProfissionalClick={handleProfissionalClick} />
+        <SecaoContato />
+      </main>
       <Rodape />
     </div>
   );

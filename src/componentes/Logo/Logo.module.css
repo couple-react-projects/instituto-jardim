@@ -1,5 +1,4 @@
 .container {
-  position: relative;
   display: flex;
   justify-content: center; /* centraliza horizontal */
   align-items: center;     /* centraliza vertical (se tiver altura) */
@@ -15,42 +14,10 @@
   background-position: center;
 }
 
-.favorito {
-  position: absolute;
-  top: -5px;
-  right: 175px;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--raio-circular);
-  background-color: var(--cor-texto-principal);
-  color: var(--cor-branco);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transicao-rapida);
-}
-
-.favorito:hover {
-  transform: scale(1.1);
-}
-
-.favorito:active {
-  transform: scale(0.95);
-}
-
 @media (max-width: 768px) {
   .logo {
     width: 100px;
     height: 100px;
-  }
-
-  .monograma {
-    font-size: 2.5rem;
-  }
-
-  .favorito {
-    width: 28px;
-    height: 28px;
   }
 }
 

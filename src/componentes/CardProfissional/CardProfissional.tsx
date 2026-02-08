@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { Profissional } from '@/dados/tipos';
 import estilos from './CardProfissional.module.css';
 
@@ -7,13 +8,49 @@ export interface CardProfissionalProps {
 }
 
 export function CardProfissional({ profissional, onClick }: CardProfissionalProps) {
-  return (
-    <article className={estilos.card} onClick={onClick} role="button" tabIndex={0} onKeyDown={(e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        onClick?.();
+  const prefetchedRef = useRef<Set<string>>(new Set());
+  const timerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
       }
-    }}>
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (prefetchedRef.current.has(profissional.foto)) return;
+
+    timerRef.current = setTimeout(() => {
+      const img = new Image();
+      img.src = profissional.foto;
+      prefetchedRef.current.add(profissional.foto);
+    }, 300);
+  };
+
+  const handleMouseLeave = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
+  return (
+    <article
+      className={estilos.card}
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
+    >
       <img
         src={profissional.foto}
         alt={`Foto de ${profissional.nome}`}

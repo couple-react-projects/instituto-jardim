@@ -52,6 +52,21 @@ export function CalendarioAgendamento({
     return diasAtendimento.includes(diaSemana);
   };
 
+  const isHoje = (data: Date): boolean => {
+    const hoje = new Date();
+    return data.toDateString() === hoje.toDateString();
+  };
+
+  const obterTooltipIndisponivel = (data: Date): string => {
+    const diaSemana = obterNomeDiaSemana(data);
+
+    if (diaSemana === 'Domingo') {
+      return 'Profissional não atende aos domingos';
+    }
+
+    return `Profissional não atende às ${diaSemana}s`;
+  };
+
   const handleDataClick = (data: Date) => {
     if (isDiaDisponivel(data)) {
       setDataSelecionada(data);
@@ -79,17 +94,20 @@ export function CalendarioAgendamento({
       <div className={estilos.secao}>
         <h3 className={estilos.subtitulo}>Selecione a Data</h3>
         <div className={estilos.calendario}>
-          {proximos30Dias.map((data, index) => {
+          {proximos30Dias.map((data) => {
             const disponivel = isDiaDisponivel(data);
             const selecionada = dataSelecionada && data.toDateString() === dataSelecionada.toDateString();
-            
+            const hoje = isHoje(data);
+
             return (
               <button
-                key={index}
-                className={`${estilos.dia} ${selecionada ? estilos.diaSelecionada : ''} ${!disponivel ? estilos.diaIndisponivel : ''}`}
+                key={data.getTime()}
+                className={`${estilos.dia} ${selecionada ? estilos.diaSelecionada : ''} ${!disponivel ? estilos.diaIndisponivel : ''} ${hoje ? estilos.diaHoje : ''}`}
                 onClick={() => handleDataClick(data)}
                 disabled={!disponivel}
                 type="button"
+                title={!disponivel ? obterTooltipIndisponivel(data) : `${formatarData(data)} - Clique para selecionar`}
+                aria-disabled={!disponivel}
               >
                 <span className={estilos.diaNumero}>{data.getDate()}</span>
                 <span className={estilos.diaSemana}>{obterNomeDiaSemana(data).substring(0, 3)}</span>
@@ -97,6 +115,22 @@ export function CalendarioAgendamento({
             );
           })}
         </div>
+
+        <div className={estilos.legenda}>
+          <div className={estilos.legendaItem}>
+            <div className={`${estilos.legendaIcone} ${estilos.legendaIconeDisponivel}`}></div>
+            <span>Disponível</span>
+          </div>
+          <div className={estilos.legendaItem}>
+            <div className={`${estilos.legendaIcone} ${estilos.legendaIconeHoje}`}></div>
+            <span>Hoje</span>
+          </div>
+          <div className={estilos.legendaItem}>
+            <div className={`${estilos.legendaIcone} ${estilos.legendaIconeIndisponivel}`}></div>
+            <span>Indisponível</span>
+          </div>
+        </div>
+
         {dataSelecionada && (
           <p className={estilos.dataSelecionadaTexto}>
             Data selecionada: <strong>{formatarData(dataSelecionada)}</strong>
@@ -123,14 +157,23 @@ export function CalendarioAgendamento({
       )}
 
       <div className={estilos.secao}>
-        <h3 className={estilos.subtitulo}>Nome do Paciente</h3>
+        <label htmlFor="nome-paciente" className={estilos.subtitulo}>
+          Nome do Paciente
+        </label>
         <input
+          id="nome-paciente"
           type="text"
           className={estilos.input}
           placeholder="Digite seu nome completo"
           value={nomePaciente}
           onChange={handleNomeChange}
+          required
+          aria-required="true"
+          aria-describedby="nome-instrucao"
         />
+        <span id="nome-instrucao" className={estilos.instrucao}>
+          Digite o nome completo do paciente para identificação no agendamento
+        </span>
       </div>
     </div>
   );

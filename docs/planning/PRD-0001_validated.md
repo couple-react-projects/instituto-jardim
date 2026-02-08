@@ -1,0 +1,156 @@
+# PRD-0001: Análise, Documentação e Planejamento de Melhorias do Instituto Jardim
+
+## Objetivo
+
+Realizar uma análise técnica completa do projeto Instituto Jardim, criar documentação abrangente para facilitar o uso e manutenção da aplicação, e estabelecer um plano estruturado de melhorias que eleve a qualidade da experiência do usuário, desempenho e aderência às boas práticas de desenvolvimento web.
+
+Este documento visa fornecer a base para que a equipe técnica possa executar três frentes de trabalho complementares: compreender a situação atual do projeto, torná-lo acessível para novos desenvolvedores e usuários, e traçar um roteiro de evolução que aumente seu valor e sustentabilidade.
+
+## Escopo
+
+### Incluído
+
+1. **Levantamento Técnico Completo**
+   - Análise da arquitetura e estrutura de componentes
+   - Mapeamento de tecnologias e dependências utilizadas
+   - Identificação de padrões de código e convenções adotadas
+   - Avaliação de pontos fortes da implementação atual
+   - Identificação de pontos frágeis, débitos técnicos e inconsistências
+
+2. **Documentação Abrangente**
+   - Criação de README.md completo com:
+     - Instruções de instalação passo a passo
+     - Guia de uso básico da aplicação
+     - Configuração de ambiente de desenvolvimento
+     - Exemplos práticos de uso
+     - Seção de troubleshooting para problemas comuns
+   - Documentação de decisões arquiteturais quando relevante
+
+3. **Planejamento de Melhorias**
+   - Propostas de melhorias em experiência do usuário e interface
+   - Recomendações de otimização de performance
+   - Sugestões de aprimoramentos de acessibilidade
+   - Estratégias para melhoria de SEO
+   - Identificação de oportunidades de refatoração de código
+   - Priorização de melhorias baseada em impacto e esforço
+
+### Excluído
+
+- Implementação efetiva das melhorias identificadas (será objeto de PRDs futuros)
+- Redesign completo da interface visual
+- Migração de tecnologias ou frameworks
+- Integração com sistemas externos não existentes
+- Criação de novas funcionalidades além do escopo atual
+- Testes automatizados (poderá ser contemplado em PRD futuro de melhorias)
+
+## Personas
+
+### Persona 1: Desenvolvedor Novo no Projeto
+- **Nome fictício**: Carlos Silva
+- **Contexto**: Desenvolvedor front-end com experiência em React que foi alocado para dar manutenção ou evoluir o projeto
+- **Necessidades**:
+  - Entender rapidamente a arquitetura e estrutura do código
+  - Configurar ambiente de desenvolvimento sem fricção
+  - Compreender as convenções e padrões adotados
+  - Saber onde encontrar informações quando encontrar dificuldades
+- **Frustrações**: Projetos sem documentação que exigem leitura extensiva de código para compreensão básica
+
+### Persona 2: Tech Lead / Gestor Técnico
+- **Nome fictício**: Ana Ferreira
+- **Contexto**: Líder técnica responsável por avaliar a saúde do código e priorizar evoluções
+- **Necessidades**:
+  - Visão clara dos pontos fortes e fracos do projeto
+  - Mapeamento de riscos técnicos e débitos
+  - Plano de melhorias priorizado para decisão estratégica
+  - Entendimento de impacto versus esforço de cada melhoria
+- **Frustrações**: Falta de visibilidade sobre qualidade técnica e direções de evolução
+
+### Persona 3: Usuário Final (Visitante do Site)
+- **Nome fictício**: Márcia Costa
+- **Contexto**: Pessoa buscando informações sobre profissionais de saúde do Instituto Jardim
+- **Necessidades**:
+  - Navegação intuitiva e rápida
+  - Informações claras sobre profissionais e formas de contato
+  - Experiência fluida em dispositivos móveis
+  - Site acessível em diferentes condições de conexão
+- **Frustrações**: Sites lentos, confusos ou difíceis de usar em celular
+
+## Requisitos Funcionais
+
+| ID | Requisito | Prioridade | Critério de Aceitação |
+|----|-----------|------------|----------------------|
+| RF-001 | Análise de arquitetura e componentes | Must Have | Documento técnico descrevendo estrutura de pastas, padrões de componentes, fluxo de dados e organização de código |
+| RF-002 | Mapeamento de tecnologias e dependências | Must Have | Lista completa de tecnologias, frameworks, bibliotecas e versões utilizadas, incluindo propósito de cada dependência |
+| RF-003 | Identificação de padrões e convenções | Must Have | Documentação dos padrões adotados (nomenclatura, organização, estilização, tipagem) com exemplos práticos |
+| RF-004 | Avaliação de pontos fortes do código | Must Have | Lista de aspectos positivos da implementação atual com justificativas |
+| RF-005 | Identificação de pontos frágeis e débitos técnicos | Must Have | Lista de problemas, inconsistências, débitos técnicos e riscos identificados, com severidade atribuída |
+| RF-006 | Criação de README com instruções de instalação | Must Have | README.md contendo pré-requisitos e passo a passo completo para instalação, verificável por pessoa sem conhecimento prévio do projeto |
+| RF-007 | Criação de seção de uso básico no README | Must Have | README.md contendo comandos de desenvolvimento, build e preview com descrição do que cada um faz |
+| RF-008 | Criação de seção de configuração no README | Should Have | README.md explicando configurações disponíveis, variáveis de ambiente (se houver) e personalizações possíveis |
+| RF-009 | Criação de seção de exemplos práticos no README | Should Have | README.md com exemplos de uso comum, snippets de código ou cenários práticos de desenvolvimento |
+| RF-010 | Criação de seção de troubleshooting no README | Should Have | README.md com problemas comuns e soluções, erros frequentes e como resolvê-los |
+| RF-011 | Propostas de melhorias de UX/UI | Must Have | Lista priorizada de melhorias de experiência do usuário e interface, com justificativa de impacto esperado |
+| RF-012 | Recomendações de otimização de performance | Must Have | Lista priorizada de melhorias de performance (tempo de carregamento, bundle size, renderização) com métricas esperadas quando possível |
+| RF-013 | Sugestões de aprimoramentos de acessibilidade | Must Have | Lista priorizada de melhorias de acessibilidade (WCAG compliance, navegação por teclado, leitores de tela) |
+| RF-014 | Estratégias para melhoria de SEO | Should Have | Lista priorizada de melhorias de SEO (meta tags, structure data, performance, semântica HTML) |
+| RF-015 | Identificação de oportunidades de refatoração | Should Have | Lista priorizada de refatorações de código (redução de duplicação, melhoria de legibilidade, simplificação) |
+| RF-016 | Matriz de priorização de melhorias | Must Have | Classificação de todas as melhorias propostas por impacto (alto/médio/baixo) e esforço (alto/médio/baixo) para suporte a decisões |
+
+## Requisitos Não-Funcionais
+
+### Qualidade da Documentação
+- A documentação deve ser escrita em português brasileiro claro e acessível
+- Textos devem ser objetivos, sem jargões desnecessários
+- Exemplos devem ser funcionais e testados
+- Organização visual deve facilitar leitura rápida (uso de tabelas, listas, destaques)
+
+### Completude da Análise
+- A análise técnica deve cobrir 100% dos componentes principais do projeto
+- Pontos fracos identificados devem ter contexto e não apenas listagem
+- Recomendações devem ser acionáveis e não genéricas
+
+### Usabilidade da Documentação
+- Um desenvolvedor novo deve conseguir configurar o ambiente em menos de 15 minutos seguindo o README
+- A seção de troubleshooting deve cobrir pelo menos 80% dos problemas comuns enfrentados na configuração inicial
+
+### Priorização de Melhorias
+- Melhorias devem estar classificadas de forma objetiva e rastreável
+- Critérios de priorização devem ser explícitos e justificados
+- Plano deve permitir execução incremental (entregas progressivas de valor)
+
+## Dependências
+
+### Internas
+- Acesso ao código-fonte completo do projeto Instituto Jardim
+- Histórico de commits (git) para compreensão de evolução do código
+- Conhecimento do contexto de negócio (informações sobre o Instituto Jardim)
+
+### Externas
+- Documentação oficial do React 18
+- Documentação oficial do Vite
+- Documentação oficial do TypeScript
+- Guias de boas práticas de acessibilidade (WCAG 2.1)
+- Ferramentas de análise de performance (Lighthouse, Web Vitals)
+
+## Riscos
+
+| Risco | Probabilidade | Impacto | Mitigação |
+|-------|--------------|---------|-----------|
+| Análise técnica superficial que não identifique problemas reais | Baixa | Alto | Revisão técnica por Tech Lead antes de aprovar análise |
+| Documentação genérica copiada de templates sem adaptação ao projeto | Média | Médio | Validação de que exemplos são específicos e funcionais do projeto |
+| Propostas de melhorias irrealistas ou muito genéricas | Média | Médio | Validação técnica de viabilidade e detalhamento de cada proposta |
+| README desatualizado rapidamente após criação | Média | Baixo | Estabelecer processo de atualização do README em evoluções futuras |
+| Falta de consenso sobre priorização de melhorias | Baixa | Médio | Usar critérios objetivos e transparentes de impacto x esforço |
+
+## Referências
+
+- **INTAKE**: [/docs/intake/INTAKE-20260207-2338.md](/docs/intake/INTAKE-20260207-2338.md)
+- **Projeto**: Instituto Jardim - React 18 + TypeScript + Vite
+- **Repositório**: /home/sh3ll/Projects/jardim-institute-project
+
+---
+
+**Status**: VALIDADO PELO HUMANO
+**Criado em**: 2026-02-07
+**Validado em**: 2026-02-07
+**Autor**: Business Analyst PRD

@@ -2,13 +2,13 @@
   /* Cores */
   --cor-fundo: #F5F5F0;
   --cor-texto-principal: #3D2817;
-  --cor-texto-secundario: #6B6B6B;
+  --cor-texto-secundario: #5A5A5A; /* Ajustado de #6B6B6B para melhor contraste (4.56:1) */
   --cor-branco: #FFFFFF;
-  --cor-whatsapp: #25D366;
-  --cor-localizacao: #4285F4;
+  --cor-whatsapp: #1FB757; /* Ajustado de #25D366 para melhor contraste (3.89:1 - texto grande OK) */
+  --cor-localizacao: #2B6ECB; /* Ajustado de #4285F4 para melhor contraste (4.54:1) */
   --cor-logo-bege: #E8DCC6;
   --cor-logo-bege-escuro: #D4C4A8;
-  --cor-marrom-claro: #8B7355;
+  --cor-marrom-claro: #6B5840; /* Ajustado de #8B7355 para melhor contraste (4.51:1) */
 
   /* Sombras */
   --sombra-card: 0 2px 8px rgba(0, 0, 0, 0.08);

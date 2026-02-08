@@ -42,3 +42,23 @@ html {
   outline-offset: 2px;
 }
 
+/* Skip link para navegação por teclado */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--cor-texto-principal);
+  color: var(--cor-branco);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 9999;
+  border-radius: 0 0 var(--raio-pequeno) 0;
+  transition: top var(--transicao-rapida);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
