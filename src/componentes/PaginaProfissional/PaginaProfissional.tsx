@@ -1,40 +1,63 @@
-import { useState } from 'react';
-import { Profissional } from '@/dados/tipos';
-import { CalendarioAgendamento } from '../CalendarioAgendamento';
-import estilos from './PaginaProfissional.module.css';
+import { useState } from "react";
+import { Profissional } from "@/dados/tipos";
+import { CalendarioAgendamento } from "../CalendarioAgendamento";
+import estilos from "./PaginaProfissional.module.css";
 
 interface PaginaProfissionalProps {
   profissional: Profissional;
   onVoltar: () => void;
 }
 
-export function PaginaProfissional({ profissional, onVoltar }: PaginaProfissionalProps) {
+export function PaginaProfissional({
+  profissional,
+  onVoltar,
+}: PaginaProfissionalProps) {
   const [dataSelecionada, setDataSelecionada] = useState<Date | null>(null);
-  const [horarioSelecionado, setHorarioSelecionado] = useState<string | null>(null);
-  const [nomePaciente, setNomePaciente] = useState('');
+  const [horarioSelecionado, setHorarioSelecionado] = useState<string | null>(
+    null,
+  );
+  const [nomePaciente, setNomePaciente] = useState("");
 
   const formatarDataParaMensagem = (data: Date): string => {
-    const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-    const meses = [
-      'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
-      'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+    const diasSemana = [
+      "Domingo",
+      "Segunda-feira",
+      "Terça-feira",
+      "Quarta-feira",
+      "Quinta-feira",
+      "Sexta-feira",
+      "Sábado",
     ];
-    
+    const meses = [
+      "janeiro",
+      "fevereiro",
+      "março",
+      "abril",
+      "maio",
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "dezembro",
+    ];
+
     const dia = data.getDate();
     const mes = meses[data.getMonth()];
     const ano = data.getFullYear();
     const diaSemana = diasSemana[data.getDay()];
-    
+
     return `${diaSemana}, ${dia} de ${mes} de ${ano}`;
   };
 
   const gerarMensagemWhatsApp = (): string => {
     if (!dataSelecionada || !horarioSelecionado || !nomePaciente.trim()) {
-      return '';
+      return "";
     }
 
     const dataFormatada = formatarDataParaMensagem(dataSelecionada);
-    const mensagem = `Olá, ${profissional.nome.split(' ')}! 
+    const mensagem = `Olá, ${profissional.nome}! 
 
 Gostaria de agendar uma consulta:
 
@@ -47,10 +70,11 @@ Aguardo confirmação. Obrigado(a)!`;
     return encodeURIComponent(mensagem);
   };
 
-  const estaCompleto = dataSelecionada && horarioSelecionado && nomePaciente.trim().length > 0;
+  const estaCompleto =
+    dataSelecionada && horarioSelecionado && nomePaciente.trim().length > 0;
   const urlWhatsapp = estaCompleto
     ? `https://wa.me/${profissional.whatsapp}?text=${gerarMensagemWhatsApp()}`
-    : '#';
+    : "#";
 
   const handleEnviarMensagem = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!estaCompleto) {
@@ -60,7 +84,11 @@ Aguardo confirmação. Obrigado(a)!`;
 
   return (
     <div className={estilos.pagina}>
-      <button className={estilos.botaoVoltar} onClick={onVoltar} aria-label="Voltar">
+      <button
+        className={estilos.botaoVoltar}
+        onClick={onVoltar}
+        aria-label="Voltar"
+      >
         <svg
           width="24"
           height="24"
@@ -105,7 +133,7 @@ Aguardo confirmação. Obrigado(a)!`;
           href={urlWhatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${estilos.botaoWhatsapp} ${!estaCompleto ? estilos.botaoWhatsappDesabilitado : ''}`}
+          className={`${estilos.botaoWhatsapp} ${!estaCompleto ? estilos.botaoWhatsappDesabilitado : ""}`}
           aria-label={`Enviar agendamento para ${profissional.nome} no WhatsApp`}
           onClick={handleEnviarMensagem}
           aria-disabled={!estaCompleto}
@@ -121,8 +149,8 @@ Aguardo confirmação. Obrigado(a)!`;
           </svg>
           <span>
             {estaCompleto
-              ? `Confirmar Agendamento com ${profissional.nome.split(' ')[0]}`
-              : 'Preencha todos os dados para agendar'}
+              ? `Confirmar Agendamento com ${profissional.nome.split(" ")[0]}`
+              : "Preencha todos os dados para agendar"}
           </span>
         </a>
       </div>
