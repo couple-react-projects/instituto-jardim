@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import estilos from './CalendarioAgendamento.module.css';
+import { useState } from "react";
+import estilos from "./CalendarioAgendamento.module.css";
 
 interface CalendarioAgendamentoProps {
   horariosDisponiveis: string[];
@@ -17,22 +17,42 @@ export function CalendarioAgendamento({
   onNomePacienteChange,
 }: CalendarioAgendamentoProps) {
   const [dataSelecionada, setDataSelecionada] = useState<Date | null>(null);
-  const [horarioSelecionado, setHorarioSelecionado] = useState<string | null>(null);
-  const [nomePaciente, setNomePaciente] = useState('');
+  const [horarioSelecionado, setHorarioSelecionado] = useState<string | null>(
+    null,
+  );
+  const [nomePaciente, setNomePaciente] = useState("");
 
   const hoje = new Date();
   const proximos30Dias: Date[] = [];
-  
+
   for (let i = 1; i <= 30; i++) {
     const data = new Date(hoje);
     data.setDate(hoje.getDate() + i);
     proximos30Dias.push(data);
   }
 
-  const diasSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+  const diasSemana = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+  ];
   const meses = [
-    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
   ];
 
   const formatarData = (data: Date): string => {
@@ -60,8 +80,8 @@ export function CalendarioAgendamento({
   const obterTooltipIndisponivel = (data: Date): string => {
     const diaSemana = obterNomeDiaSemana(data);
 
-    if (diaSemana === 'Domingo') {
-      return 'Profissional não atende aos domingos';
+    if (diaSemana === "Domingo") {
+      return "Profissional não atende aos domingos";
     }
 
     return `Profissional não atende às ${diaSemana}s`;
@@ -92,25 +112,33 @@ export function CalendarioAgendamento({
       <h2 className={estilos.titulo}>Agendar Consulta</h2>
 
       <div className={estilos.secao}>
-        <h3 className={estilos.subtitulo}>Selecione a Data</h3>
+        <h3 className={estilos.subtitulo}>Selecione a Data de Preferência</h3>
         <div className={estilos.calendario}>
           {proximos30Dias.map((data) => {
             const disponivel = isDiaDisponivel(data);
-            const selecionada = dataSelecionada && data.toDateString() === dataSelecionada.toDateString();
+            const selecionada =
+              dataSelecionada &&
+              data.toDateString() === dataSelecionada.toDateString();
             const hoje = isHoje(data);
 
             return (
               <button
                 key={data.getTime()}
-                className={`${estilos.dia} ${selecionada ? estilos.diaSelecionada : ''} ${!disponivel ? estilos.diaIndisponivel : ''} ${hoje ? estilos.diaHoje : ''}`}
+                className={`${estilos.dia} ${selecionada ? estilos.diaSelecionada : ""} ${!disponivel ? estilos.diaIndisponivel : ""} ${hoje ? estilos.diaHoje : ""}`}
                 onClick={() => handleDataClick(data)}
                 disabled={!disponivel}
                 type="button"
-                title={!disponivel ? obterTooltipIndisponivel(data) : `${formatarData(data)} - Clique para selecionar`}
+                title={
+                  !disponivel
+                    ? obterTooltipIndisponivel(data)
+                    : `${formatarData(data)} - Clique para selecionar`
+                }
                 aria-disabled={!disponivel}
               >
                 <span className={estilos.diaNumero}>{data.getDate()}</span>
-                <span className={estilos.diaSemana}>{obterNomeDiaSemana(data).substring(0, 3)}</span>
+                <span className={estilos.diaSemana}>
+                  {obterNomeDiaSemana(data).substring(0, 3)}
+                </span>
               </button>
             );
           })}
@@ -118,15 +146,16 @@ export function CalendarioAgendamento({
 
         <div className={estilos.legenda}>
           <div className={estilos.legendaItem}>
-            <div className={`${estilos.legendaIcone} ${estilos.legendaIconeDisponivel}`}></div>
+            <div
+              className={`${estilos.legendaIcone} ${estilos.legendaIconeDisponivel}`}
+            ></div>
             <span>Disponível</span>
           </div>
+
           <div className={estilos.legendaItem}>
-            <div className={`${estilos.legendaIcone} ${estilos.legendaIconeHoje}`}></div>
-            <span>Hoje</span>
-          </div>
-          <div className={estilos.legendaItem}>
-            <div className={`${estilos.legendaIcone} ${estilos.legendaIconeIndisponivel}`}></div>
+            <div
+              className={`${estilos.legendaIcone} ${estilos.legendaIconeIndisponivel}`}
+            ></div>
             <span>Indisponível</span>
           </div>
         </div>
@@ -140,12 +169,14 @@ export function CalendarioAgendamento({
 
       {dataSelecionada && (
         <div className={estilos.secao}>
-          <h3 className={estilos.subtitulo}>Selecione o Horário</h3>
+          <h3 className={estilos.subtitulo}>
+            Selecione o Horário de Preferência
+          </h3>
           <div className={estilos.horarios}>
             {horariosDisponiveis.map((horario) => (
               <button
                 key={horario}
-                className={`${estilos.horario} ${horarioSelecionado === horario ? estilos.horarioSelecionado : ''}`}
+                className={`${estilos.horario} ${horarioSelecionado === horario ? estilos.horarioSelecionado : ""}`}
                 onClick={() => handleHorarioClick(horario)}
                 type="button"
               >
@@ -178,4 +209,3 @@ export function CalendarioAgendamento({
     </div>
   );
 }
-
