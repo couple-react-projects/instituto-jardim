@@ -41,7 +41,7 @@ export const profissionais: Profissional[] = [
       "18:30",
       "19:00",
     ],
-    whatsapp: "5544998065522",
+    whatsapp: "5544991576330",
     descricao:
       "Especialista em harmonização orofacial com foco em estética facial e bem-estar.",
   },
@@ -85,7 +85,7 @@ export const profissionais: Profissional[] = [
       "18:30",
       "19:00",
     ],
-    whatsapp: "5544998065522",
+    whatsapp: "5544991576330",
     descricao:
       "Dedica-se à estética e reabilitação oral, proporcionando sorrisos saudáveis e harmoniosos.",
   },
@@ -111,7 +111,7 @@ export const profissionais: Profissional[] = [
       "17:00",
       "18:00",
     ],
-    whatsapp: "5544998065522",
+    whatsapp: "5544997410072",
     descricao:
       "Especialista em terapia regenerativa e tratamento da dor, com foco em técnicas avançadas de reabilitação.",
   },

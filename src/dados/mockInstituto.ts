@@ -12,7 +12,7 @@ export const contatos: Contato[] = [
     tipo: "whatsapp",
     titulo: "WhatsApp",
     descricao: "Fale conosco agora mesmo",
-    url: "https://wa.me/5544998065522",
+    url: "https://wa.me/5544991576330",
     icone: "whatsapp",
   },
   {
